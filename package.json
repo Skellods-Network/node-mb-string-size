@@ -1,0 +1,21 @@
+﻿{
+    "name": "node-mb-string-size",
+    "version": "1.0.0",
+    "description": "Get correct (byte-) size of multibyte strings",
+    "main": "index.js",
+    "homepage": "https://shps.io",
+    "author": {
+        "name": "Marco Alka",
+        "email": "me@marco-alka.de",
+        "url": "https://marco-alka.de"
+    },
+	"repository": {
+		"type" : "git",
+		"url" : "https://github.com/Skellods-Network/node-mb-string-size.git"
+	},
+    "engines": {
+        "node": ">=4.0.0",
+        "npm": ">=3.0.0"
+    },
+    "license": "MIT"
+}
