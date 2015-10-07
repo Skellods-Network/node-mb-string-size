@@ -8,7 +8,7 @@ This might be a problem (e.g. for SHPS when sending the content-length). Node-MB
 This module was first created for SHPS, but then separated for easy use by everyone :)
 
 ### Version
-1.0.2
+1.0.3
 
 ### Installation
 ```sh
@@ -21,12 +21,14 @@ How To Use
 ```js
 var strLength = require('node-mb-string-size');
 
-var str = 'TEST - äÖüß???;';
+var str = 'TEST - Ã¤Ã–Ã¼ÃŸæ—¥æœ¬èªž;';
 console.log('The string `' + str + '` is ' + strLength(str) + 'bytes in size.');
 ```
 
 Version History
 ----
+
+1.0.3 - Corrected README.md
 
 1.0.2 - Added Keywords
 

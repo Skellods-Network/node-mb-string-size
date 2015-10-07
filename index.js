@@ -2,7 +2,7 @@
 
 
 /**
- * Calculate length of a string
+ * Calculate size of a string
  * The problem when using string length or even buffer length is that certain character lengths (especially asian symbols) will be counted in a wrong way for UTF8
  * This might be a problem (e.g. for SHPS when sending the content-length)
  * This function aims to solve the problem by adding to the count when special characters are detected
