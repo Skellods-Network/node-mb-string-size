@@ -1,60 +1,53 @@
 'use strict';
 
-
 /**
  * Calculate size of a string
- * The problem when using string length or even buffer length is that certain character lengths (especially asian symbols) will be counted in a wrong way for UTF8
- * This might be a problem (e.g. for SHPS when sending the content-length)
- * This function aims to solve the problem by adding to the count when special characters are detected
  * 
- * @param $str UTF-8 String
- * @result integer
+ * @param {string|number[]} str UTF-8 string or array of character codes
+ * @result {number}
  */
-module.exports = function ($str) {
-
-    if (typeof $str === 'undefined' || typeof $str.length === 'undefined') {
-
+module.exports = function (str) {
+    if (typeof str === 'undefined' || typeof str.length === 'undefined') {
         return 0;
     }
 
+    var charCodes = [];
     var i = 0;
-    var c = $str.length;
-    if (typeof $str !== 'array') {
+    var strSize = str.length;
 
-        var tmp = [];
-        var isStr = typeof $str === 'string';
-        while (i < c) {
+    if (Array.isArray(str)) {
+        i = strSize;
+        charCodes = str;
+    }
+    else {
+        var isString = typeof str === 'string';
 
-            isStr ? tmp.push($str.charCodeAt(i))
-                  : tmp.push($str[i]);
+        while (i < strSize) {
+            if (isString) {
+                charCodes.push(str.charCodeAt(i));
+            }
+            else {
+                charCodes.push(str[i]);
+            }
 
             i++;
         }
-
-        $str = tmp;
-    }
-    else {
-
-        i = c;
     }
 
     while (i > 0) {
+        var code = charCodes[i];
 
-        var code = $str[i];
         if (code > 0x7f && code <= 0x7ff) {
-
-            c++;
+            strSize++;
         }
         else if (code > 0x7ff && code <= 0xffff) {
-
             if (code < 0xDC00 || code > 0xDFFF) {
-
-                c += 2;
+                strSize += 2;
             }
         }
 
         i--;
     }
 
-    return c;
+    return strSize;
 };
