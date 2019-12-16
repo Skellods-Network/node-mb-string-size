@@ -3,26 +3,21 @@
     "version": "1.0.3",
     "description": "Get correct (byte-) size of multibyte strings",
     "main": "index.js",
-    "homepage": "https://shps.io",
+    "homepage": "https://marco-alka.de",
     "author": {
         "name": "Marco Alka",
-        "email": "me@marco-alka.de",
+        "email": "hello@marco-alka.de",
         "url": "https://marco-alka.de"
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/Skellods-Network/node-mb-string-size.git"
     },
-    "engines": {
-        "node": ">=4.0.0",
-        "npm": ">=3.0.0"
-    },
     "keywords": [
-        "multibyte",
-        "string",
-        "size",
         "length",
-        "SHPS"
+        "multibyte",
+        "size",
+        "string"
     ],
     "license": "MIT"
 }
