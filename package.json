@@ -13,6 +13,9 @@
         "type": "git",
         "url": "https://github.com/Skellods-Network/node-mb-string-size.git"
     },
+    "scripts": {
+        "test-node": "npm run ./test.js"
+    },
     "keywords": [
         "length",
         "multibyte",
