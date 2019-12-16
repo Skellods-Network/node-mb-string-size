@@ -10,7 +10,7 @@ I cleaned everything up one final time, so if you are still on a very old versio
 you can use this library to get a correct byte size. I will not maintain it any longer, though, as the problem does not exist anymore.
 
 ### Version
-1.0.3
+1.0.4
 
 ### Installation
 ```sh
@@ -31,6 +31,7 @@ Version History
 ----
 
 ```undefined
+1.0.4 - Clean code and deprecate lib
 1.0.3 - Corrected README.md
 1.0.2 - Added Keywords
 1.0.1 - Wrong Folder published :/

@@ -1,6 +1,6 @@
 ﻿{
     "name": "node-mb-string-size",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "Get correct (byte-) size of multibyte strings",
     "main": "index.js",
     "homepage": "https://marco-alka.de",
