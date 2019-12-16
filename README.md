@@ -1,11 +1,13 @@
 # Node-MB-String-Size
 
-Calculate the length of a string
+Calculate the length of a string. DEPRECATION WARNING!
 
-The problem when using string.length or even having a buffer to calculate its length is that certain character lengths (especially asian symbols) will be counted in a wrong way for UTF8 (namely 1 Byte / character).
-This might be a problem (e.g. for SHPS when sending the content-length). Node-MB-String-Size aims to solve it by adding to the byte count when special characters are detected.
+The original problem was, that `buffer.length` would calculate a wrong byte size for certain UTF-8 symbols.
+This library was implemented to fix the problem by iterating over the string and detecting the multibyte-symbols, yielding a correct byte size.
 
-This module was first created for SHPS, but then separated for easy use by everyone :)
+However, current NodeJS versions correctly calculate the byte size, so this library is obsolete.
+I cleaned everything up one final time, so if you are still on a very old version of NodeJS (for example < 6),
+you can use this library to get a correct byte size. I will not maintain it any longer, though, as the problem does not exist anymore.
 
 ### Version
 1.0.3
@@ -22,17 +24,17 @@ How To Use
 var strLength = require('node-mb-string-size');
 
 var str = 'TEST - äÖüß日本語;';
-console.log('The string `' + str + '` is ' + strLength(str) + 'bytes in size.');
+console.log('The string `' + str + '` is ' + strLength(str) + ' bytes in size.');
 ```
 
 Version History
 ----
 
+```undefined
 1.0.3 - Corrected README.md
-
 1.0.2 - Added Keywords
-
 1.0.1 - Wrong Folder published :/
+```
 
 License
 ----
